@@ -34,11 +34,8 @@ public class CompanyRepositoryImpl implements CompanyRepository {
   }
 
   @Override
-  public void delete(int id) {
-    Company company = em.find(Company.class, id);
-    if (company != null) {
-      em.remove(company);
-    }
+  public void delete(Company company) {
+    em.remove(company);
   }
 
 }

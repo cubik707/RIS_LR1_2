@@ -35,10 +35,7 @@ public class CourseRepositoryImpl implements CourseRepository {
   }
 
   @Override
-  public void delete(int id) {
-    Course course = em.find(Course.class, id);
-    if (course != null) {
-      em.remove(course);
-    }
+  public void delete(Course course) {
+    em.remove(course);
   }
 }
