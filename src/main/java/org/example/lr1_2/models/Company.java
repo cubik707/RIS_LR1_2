@@ -2,9 +2,11 @@ package org.example.lr1_2.models;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name="companies")
-public class Company {
+public class Company implements Serializable {
 
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -25,5 +27,9 @@ public class Company {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public int getId() {
+    return id;
   }
 }
