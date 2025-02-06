@@ -24,7 +24,8 @@
     factory org.apache.tomcat.jdbc.pool.DataSourceFactory
     UserName root
     Password your_password
-</Resource>```
+</Resource>
+```
 3. **Настрой `persistence.xml` для работы через JTA:**:
 ```xml<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
              version="3.2">
@@ -38,4 +39,5 @@
             <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
-</persistence>```
+</persistence>
+```
