@@ -3,7 +3,8 @@ package org.example.lr1_2.service;
 import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
 import org.example.lr1_2.models.Company;
-import org.example.lr1_2.repository.CompanyRepository;
+import org.example.lr1_2.models.Course;
+import org.example.lr1_2.repository.company.CompanyRepository;
 
 import java.util.List;
 
@@ -33,5 +34,9 @@ public class CompanyService {
       throw new IllegalArgumentException("Company with ID " + companyId + " does not exist.");
     }
     companyRepository.delete(company);
+  }
+
+  public Company getCompanyByName(String companyName) {
+    return companyRepository.findByName(companyName);
   }
 }

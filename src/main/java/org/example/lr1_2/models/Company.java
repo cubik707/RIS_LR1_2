@@ -3,6 +3,7 @@ package org.example.lr1_2.models;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="companies")
@@ -15,10 +16,14 @@ public class Company implements Serializable {
   @Column(name="company_name")
   private String name;
 
+  @OneToMany(mappedBy = "company")
+  private List<Course> courses;
+
   public Company() {}
 
-  public Company(String companyName) {
+  public Company(String companyName, List<Course> courses) {
     this.name = companyName;
+    this.courses = courses;
   }
 
   public String getName() {
@@ -31,5 +36,13 @@ public class Company implements Serializable {
 
   public int getId() {
     return id;
+  }
+
+  public List<Course> getCourses() {
+    return courses;
+  }
+
+  public void setCourses(List<Course> courses) {
+    this.courses = courses;
   }
 }

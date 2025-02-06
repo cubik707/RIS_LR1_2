@@ -1,10 +1,13 @@
-package org.example.lr1_2.repository;
+package org.example.lr1_2.repository.course;
 
+import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import org.example.lr1_2.models.Company;
 import org.example.lr1_2.models.Course;
+import org.example.lr1_2.repository.company.CompanyRepository;
 
 import java.util.List;
 

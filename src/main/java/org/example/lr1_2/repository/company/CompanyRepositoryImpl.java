@@ -1,7 +1,8 @@
-package org.example.lr1_2.repository;
+package org.example.lr1_2.repository.company;
 
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import org.example.lr1_2.models.Company;
@@ -38,4 +39,14 @@ public class CompanyRepositoryImpl implements CompanyRepository {
     em.remove(company);
   }
 
+  @Override
+  public Company findByName(String companyName) {
+    TypedQuery<Company> query = em.createQuery("SELECT c FROM Company c WHERE c.name = :companyName", Company.class);
+    query.setParameter("companyName", companyName);
+    try {
+      return query.getSingleResult();
+    } catch (NoResultException e) {
+      return null;
+    }
+  }
 }
