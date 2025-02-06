@@ -21,7 +21,7 @@
 ```xml
 <Resource id="RIS_LR1_2" type="DataSource">
     JdbcDriver com.mysql.cj.jdbc.Driver
-    JdbcUrl jdbc:mysql://localhost:3306/LanguageCourses?useSSL=false&serverTimezone=UTC
+    JdbcUrl jdbc:mysql://localhost:3306/LanguageCourses?useSSL=false&serverTimezone=UTC&amp;allowPublicKeyRetrieval=true
     factory org.apache.tomcat.jdbc.pool.DataSourceFactory
     UserName root
     Password your_password
